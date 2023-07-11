@@ -21,16 +21,16 @@ while True:
         if excedeu_saldo:
             print("Seu saldo é insuficiente para realizar essa operação.")
         elif excedeu_limite:
-            print("O valor do saque excede o limite permitido para o seu tipo de conta.")
+            print("Falha na operação! O valor do saque excede o limite permitido para o seu tipo de conta.")
         elif excedeu_saques:
-            print("O número máximo de saques diários foi atingido.")
+            print("Falha na operação! O número máximo de saques diários foi atingido.")
         elif saque > 0:
             saldo -= saque
             saques_diarios += 1
             extrato += f"Saque: R$ {saque:.2f} realizado.\n"
             print(f"Saque de R$ {saque:.2f} realizado.")
         else:
-            print("Valor inválido. O valor do saque deve ser maior que zero.") 
+            print("Falha na operação! O valor do saque deve ser maior que R$ 0,00.") 
     elif opcao == "2":
         deposito = float(input("Digite o valor que deseja depositar: "))
         if deposito > 0:
@@ -38,7 +38,7 @@ while True:
             extrato += f"Deposito: R$ {deposito:.2f}\n"
             print(f"Deposito de R$ {deposito:.2f} realizado.")
         else:
-            print("Valor inválido. O valor depositado deve ser maior do que R$ 0,00.")
+            print("Falha na operação! O valor depositado deve ser maior do que R$ 0,00.")
     elif opcao == "3":
         print("\n===================== Extrato ===============================================")
         print("Não foram realizadas movimentações na conta" if not extrato else extrato)
@@ -49,4 +49,4 @@ while True:
         print("Obrigado por utilizar nosso sistema, volte sempre!")
         break
     else:
-        print("A opção escolhida é invalida, tente novamente.")
+        print("Falha na operação! A opção escolhida é invalida, tente novamente.")
